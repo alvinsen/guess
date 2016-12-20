@@ -1,0 +1,31 @@
+<html>
+  <body>
+    <form action="/guess">
+      <h1>
+        <center>
+          Guess a number between 1 and 10
+        </center>
+      </h1>
+      {% if hint %}
+      <p>
+        <center>
+          <b>
+            {{ hint }}
+          </b>
+        </center>
+      </p>
+      {% endif %}
+      <p>
+        <center>
+      {% if not win %}
+          <input name="num">
+          <input type="hidden" name="uuid" value="{{ uuid }}">
+          <input type="submit" value="guess">
+      {% else %}
+          Try another? <a href="/">Go</a>
+      {% endif %}
+        </center>
+      </p>
+    </form>
+  </body>
+</html>

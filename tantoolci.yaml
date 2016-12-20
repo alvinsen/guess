@@ -1,0 +1,22 @@
+machine:
+
+  timezone:
+    Asia/Shanghai
+
+  python:
+    version:
+      python2.7
+
+dependencies:
+  pre:
+    - pip install -r requirements.txt
+  override:
+    - python ./setup.py build
+  post:
+    - python setup.py bdist_wheel
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: foo-bar-123
