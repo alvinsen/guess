@@ -3,9 +3,6 @@ machine:
   timezone:
     Asia/Shanghai
 
-  python:
-    version:
-      python2.7
 
 dependencies:
   pre:
