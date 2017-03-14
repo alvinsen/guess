@@ -11,7 +11,8 @@ machine:
 
 dependencies:
   pre:
-    - echo ls -alh /python
+    - ls -alh /etc/profile.d
+    - ls -alh /python
     - env
   post:
     - pip install -r requirements.txt
