@@ -19,6 +19,8 @@ dependencies:
     - python setup.py bdist
 
 compile:
+  pre:
+    - echo current python version $(python --version)
   override:
     - python ./setup.py build
 
