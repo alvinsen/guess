@@ -19,7 +19,7 @@ dependencies:
 compile:
   post:
     - python ./setup.py bdist
-    - find builds -exec ls -alh {} \;
+    - find build -exec ls -alh {} \;
 
 deployment:
   staging:
