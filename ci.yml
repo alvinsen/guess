@@ -18,8 +18,9 @@ dependencies:
 
 compile:
   post:
-    - python ./setup.py bdist
-    - find build -exec ls -alh {} \;
+    - pip install wheel
+    - python ./setup.py bdist_wheel
+    - ls -alh dist
 
 deployment:
   staging:
