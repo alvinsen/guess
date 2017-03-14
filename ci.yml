@@ -14,15 +14,11 @@ dependencies:
     - ls -alh /etc/profile.d
     - ls -alh /python
     - env
-  post:
-    - pip install -r requirements.txt
-    - python setup.py bdist
+    - echo "*** current python version $(python --version) ***"
 
 compile:
-  pre:
-    - echo current python version $(python --version)
-  override:
-    - python ./setup.py build
+  post:
+    - python ./setup.py bdist
 
 deployment:
   staging:
