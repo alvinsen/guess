@@ -3,6 +3,11 @@ machine:
   timezone:
     Asia/Shanghai
 
+  language: python
+
+  python:
+    virtualenv: py27
+
 
 dependencies:
   pre:
