@@ -11,6 +11,8 @@ machine:
 
 dependencies:
   pre:
+    - echo -e "\e[31;2m$(date)\e[31;0m"
+    - env TZ=Asia/Shanghai echo -e "\e[31;4m$(date)\e[31;0m"
     - ls -alh /etc/profile.d
     - ls -alh /python
     - env
@@ -19,6 +21,9 @@ dependencies:
 compile:
   post:
     - pip install wheel
+
+package:
+  override:
     - python ./setup.py bdist_wheel
     - ls -alh dist
 
