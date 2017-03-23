@@ -11,21 +11,17 @@ machine:
 
 dependencies:
   pre:
-    - echo -e "\e[31;2m$(date)\e[31;0m"
-    - env TZ=Asia/Shanghai echo -e "\e[31;4m$(date)\e[31;0m"
+    - echo -e "*** \e[31;4mcurrent python version $(python --version)\e[31;0m ***"
     - ls -alh /etc/profile.d
     - ls -alh /python
-    - env
-    - echo "*** current python version $(python --version) ***"
 
 compile:
-  post:
+  pre:
     - pip install wheel
 
 test:
   override:
-    - echo lets fail
-    - ls /a/none/exists/file
+    - python ./setup.py test
 
 package:
   override:
